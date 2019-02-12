@@ -1,11 +1,11 @@
 FROM golang:latest
 
-ENV PRJ_DIR $GOPATH/src/github.com/dgoldstein1/random-number-generator
+ENV PRJ_DIR $GOPATH/src/github.com/dgoldstein1/random-wikipedia
 # create project dir
 RUN mkdir -p $PRJ_DIR
 # add src, service communication ,and docs
 COPY . $PRJ_DIR
-RUN mkdir -p mkdir -p /opt/services/random-number-generator
+RUN mkdir -p mkdir -p /opt/services/random-wikipedia
 COPY ./Gopkg.toml $PRJ_DIR
 COPY ./Gopkg.lock $PRJ_DIR
 
@@ -25,7 +25,7 @@ RUN dep ensure -v
 # configure entrypoint
 RUN go build
 
-ENTRYPOINT ["./random-number-generator"]
+ENTRYPOINT ["./random-wikipedia"]
 
 # expose service ports
 EXPOSE 10000

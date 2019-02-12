@@ -1,17 +1,17 @@
-# random-number-generator
-simple service generating a random number with prometheus metrics
+# random-wikipedi
+simple service getting the text of a random wikipedia article with prometheus metrics.
 
 ## Run it
 
 ```
-docker run -p 8080:8080 dgoldstein1/random-number-generator
+docker run -p 8080:8080 dgoldstein1/random-wikipedia
 ```
 
 ## API
 
 `/metrics` -- shows prometheus metrics for the service
 
-`/randomNumber?max={int64}` -- generates a random number with a max
+`/randomArticle` -- generates a random number with a max
 
 
 ## Authors
