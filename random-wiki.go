@@ -6,7 +6,6 @@ import (
     "net/http"
     "log"
     "github.com/prometheus/client_golang/prometheus/promhttp"
-    // "github.com/davecgh/go-spew/spew"
     "io/ioutil"
 )
 
@@ -24,6 +23,7 @@ type Page struct {
 
 
 func randomArticle(w http.ResponseWriter, r *http.Request) {
+    log.Printf("Method: '%s',url: '%s'",  r.Method, r.URL)
     // make request
     url := "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exlimit=max&explaintext&exintro&generator=random&grnnamespace=0&grnlimit=1ts="
     res, err := http.Get(url)
