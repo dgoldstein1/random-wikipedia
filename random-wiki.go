@@ -24,7 +24,7 @@ type Page struct {
 func RandomArticle(w http.ResponseWriter, r *http.Request) {
 	log.Printf("Method: '%s',url: '%s'", r.Method, r.URL)
 	// make request
-	url := "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exlimit=max&explaintext&exintro&generator=random&grnnamespace=0&grnlimit=1ts="
+	url := "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exlimit=max&explaintext&exintro&generator=random&grnnamespace=0"
 	res, err := http.Get(url)
 	if err != nil {
 		panic(err.Error())
